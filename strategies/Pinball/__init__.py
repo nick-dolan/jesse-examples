@@ -81,19 +81,19 @@ class Pinball(Strategy):
 
     def update_position(self):
         if self.is_long:
-            if self.close > self.average_entry_price + (self.average_entry_price * self.vars['greed'] / 100):
-                self.liquidate()
-            elif self.close < self.average_entry_price - (self.average_entry_price * self.vars['greed'] / 100):
-                self.liquidate()
-            elif self.signal_red:
+            if (
+                    self.close > self.average_entry_price + (self.average_entry_price * self.vars['greed'] / 100)
+                    or self.close < self.average_entry_price - (self.average_entry_price * self.vars['greed'] / 100)
+                    or self.signal_red
+            ):
                 self.liquidate()
 
         if self.is_short:
-            if self.close < self.average_entry_price - (self.average_entry_price * self.vars['greed'] / 100):
-                self.liquidate()
-            elif self.close > self.average_entry_price + (self.average_entry_price * self.vars['greed'] / 100):
-                self.liquidate()
-            elif self.signal_green:
+            if (
+                    self.close < self.average_entry_price - (self.average_entry_price * self.vars['greed'] / 100)
+                    or self.close > self.average_entry_price + (self.average_entry_price * self.vars['greed'] / 100)
+                    or self.signal_green
+            ):
                 self.liquidate()
 
     def on_stop_loss(self, order):
