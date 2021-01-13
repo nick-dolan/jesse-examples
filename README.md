@@ -12,7 +12,7 @@ Custom indicators for [Jesse](https://github.com/jesse-ai/jesse) trading framewo
 
 > **Momentum Pinball**
 >
-> Port of: [Momentum Pinball](https://ru.tradingview.com/script/X9zMa5Fn-Momentum-Pinball/)
+> Port of: [Momentum Pinball](https://tradingview.com/script/X9zMa5Fn-Momentum-Pinball/)
 
 > **Zero-Lag Exponential Moving Average**
 >
