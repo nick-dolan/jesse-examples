@@ -7,7 +7,7 @@ from jesse.utils import anchor_timeframe
 
 # trading routes
 routes = [
-    ('Binance', 'LTC-USDT', '30m', 'IndicatorsPreview')
+    ('Binance', 'LTC-USDT', '30m', 'Pinball')
 ]
 
 # in case your strategy requires extra candles, timeframes, ...

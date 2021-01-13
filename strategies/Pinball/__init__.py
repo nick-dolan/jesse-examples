@@ -8,6 +8,7 @@ from datetime import datetime, timezone, timedelta
 from helpers import same_length
 
 
+# Test on LTC-USDT pair with 30m candle.
 class Pinball(Strategy):
     def __init__(self):
         super().__init__()
@@ -36,7 +37,9 @@ class Pinball(Strategy):
         tr = ta.trange(candles=self.candles, sequential=True)
         core = tr[np.logical_not(np.isnan(tr))]
         vwma_tr = ti.vwma(np.ascontiguousarray(core), np.ascontiguousarray(self.candles[:, 5]), period=200)
-        return (same_length(self.candles[:, 5], vwma_tr) / self.candles[:, 2] * 100 * 2)[-1]
+        mult = 2
+
+        return (same_length(self.candles[:, 5], vwma_tr) / self.candles[:, 2] * 100 * mult)[-1]
 
     @property
     def fast_ema(self):
