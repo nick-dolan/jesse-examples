@@ -1,6 +1,6 @@
 # ⚙ Custom indicators for Jesse
 
-Custom indicators for [Jesse](https://github.com/jesse-ai/jesse) trading framework, mostly ports from [TradingView](https://www.tradingview.com/), and a simple strategy to show how to work with some of them.
+Custom indicators for [Jesse](https://github.com/jesse-ai/jesse) trading framework, mostly ports from [TradingView](https://www.tradingview.com/), and a simple strategy to show how to work with some of them. 
 
 > **MA Streak**
 >
@@ -24,3 +24,4 @@ Custom indicators for [Jesse](https://github.com/jesse-ai/jesse) trading framewo
 
 To run, type: `jesse backtest 2020-12-01 2020-12-31 --debug`
 
+[Forum](https://forum.jesse.trade/d/208-custom-indicators-for-jesse)
