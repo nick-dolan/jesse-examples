@@ -22,6 +22,12 @@ Custom indicators for [Jesse](https://github.com/jesse-ai/jesse) trading framewo
 >
 > Port of: [Zero Lag Keltner Channels](https://www.tradingview.com/script/CTzNAuUH-Zero-Lag-Keltner-Channels/)
 
+#### FinTA (Financial Technical Analysis)
+
+See `FintaExamples` strategy to see how to connect third party technical indicators library [FinTA](https://github.com/peerchemist/finta). In FinTA, there're some indicators that are not on the official Jesse's [list](https://docs.jesse.trade/docs/indicators/reference.html).
+
+
+
 To run, type: `jesse backtest 2020-12-01 2020-12-31 --debug`
 
 [Forum](https://forum.jesse.trade/d/208-custom-indicators-for-jesse)
