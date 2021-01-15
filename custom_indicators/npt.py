@@ -28,6 +28,8 @@ def npt(candles: np.ndarray,
     co = candles_close - candles_open
     hl = candles_high - candles_low
 
+    period = period - 1
+
     highest = np.full_like(hl, np.nan)
 
     for i in range(period, len(hl)):
