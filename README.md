@@ -22,6 +22,10 @@ Custom indicators for [Jesse](https://github.com/jesse-ai/jesse) trading framewo
 >
 > Port of: [Zero Lag Keltner Channels](https://www.tradingview.com/script/CTzNAuUH-Zero-Lag-Keltner-Channels/)
 
+> **Zero Lag Bollinger Bands**
+>
+> This is [Bollinger](https://www.tradingview.com/scripts/bollingerbands/) Bands (BB) with Zero Lag Moving Average (ZLEMA as base).
+
 #### FinTA (Financial Technical Analysis)
 
 See `FintaExamples` strategy to see how to connect third party technical indicators library [FinTA](https://github.com/peerchemist/finta). In FinTA, there're some indicators that are not on the official Jesse's [list](https://docs.jesse.trade/docs/indicators/reference.html).
