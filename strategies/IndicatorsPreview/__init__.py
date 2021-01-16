@@ -12,7 +12,7 @@ class IndicatorsPreview(Strategy):
     # MA Streak
     @property
     def ma_streak(self):
-        return cta.ma_streak(self.candles[:, 2], ma_period=5, sequential=False)
+        return cta.ma_streak(self.candles, ma_period=5, sequential=False)
 
     # Moving Average Cross (Market Color)
     @property
