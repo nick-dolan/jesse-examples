@@ -1,34 +1,36 @@
 import numpy as np
 import tulipy as ti
-import pandas as pd
 from helpers import same_length
 from typing import Union
+from jesse.helpers import get_candle_source
 
-
-def ma_streak(src: np.ndarray,
-              ma_period: int = 4,
+def ma_streak(candles: np.ndarray,
+              ma_period: int = 4, source_type="close",
               sequential=False) -> Union[float, np.ndarray]:
     """
     MA Streak
     Port of: https://www.tradingview.com/script/Yq1z7cIv-MA-Streak-Can-Show-When-a-Run-Is-Getting-Long-in-the-Tooth/
-    :param src: np.ndarray
+    :param candles: np.ndarray
     :param ma_period: int - default: 4
     :param sequential: bool - default: False
     :return: Union[float, np.ndarray]
     """
-    if not sequential and len(src) > 240:
-        src = src[-240:]
+    if not sequential and len(candles) > 240:
+        candles = candles[-240:]
 
+    src = get_candle_source(candles, source_type=source_type)
+    
     avgval = ti.zlema(np.ascontiguousarray(src), period=ma_period)
+    
+    arr = np.diff(avgval)
+    pos = np.clip(arr, 0, 1).astype(bool).cumsum()
+    neg = np.clip(arr, -1, 0).astype(bool).cumsum()
+    streak = np.where(arr >= 0, pos - np.maximum.accumulate(np.where(arr <= 0, pos, 0)),
+                      -neg + np.maximum.accumulate(np.where(arr >= 0, neg, 0)))
 
-    s = pd.Series(avgval)
-    sd = s.diff()
-    pos = s.groupby(sd.lt(0).cumsum()).cumcount()
-    neg = s.groupby(sd.gt(0).cumsum()).cumcount()
-    streak = np.where(sd > 0, pos, -neg)[1:]
-    streak = same_length(src, streak)
+    res = same_length(src, streak)
 
     if sequential:
-        return streak
+        return res
     else:
-        return streak[-1]
+        return res[-1]
