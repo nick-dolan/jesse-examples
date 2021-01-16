@@ -29,6 +29,11 @@ class IndicatorsPreview(Strategy):
     def zlkc(self):
         return cta.zlkc(self.candles, period=20, mult=1, sequential=False)
 
+    # Zero Lag Bollinger Bands
+    @property
+    def zlbb(self):
+        return cta.zlbb(self.candles, period=20, mult=1.5, sequential=False)
+
     def should_long(self) -> bool:
         return False
 
@@ -52,3 +57,4 @@ class IndicatorsPreview(Strategy):
         print("{0}, Moving Average Cross: {1}".format(date, self.mac))
         print("{0}, Net Price Trend: {1}".format(date, round(self.npt, 2)))
         print("{0}, ZLKC: {1} {2} {3}".format(date, self.zlkc.upperband, self.zlkc.middleband, self.zlkc.lowerband))
+        print("{0}, ZLKC: {1} {2} {3}".format(date, self.zlbb.upperband, self.zlbb.middleband, self.zlbb.lowerband))

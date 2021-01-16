@@ -21,12 +21,14 @@ def zlkc(candles: np.ndarray,
 
     :param candles: np.ndarray
     :param period: int - default: 20
-    :param mult: int - default: 1
+    :param mult: float - default: 1
     :param source_type: str - default: "hlc3"
     :param sequential: bool - default=False
 
     :return: ZeroLagKeltnerChannel(upperband, middleband, lowerband)
     """
+    if not sequential and len(candles) > 240:
+        candles = candles[-240:]
 
     source = get_candle_source(candles, source_type=source_type)
     ma = cta.zlema(source, period=period, sequential=True)
