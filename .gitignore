@@ -125,3 +125,4 @@ venv.bak/
 dmypy.json
 
 storage
+strategies/Test
