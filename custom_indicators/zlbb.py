@@ -11,9 +11,11 @@ def zlbb(candles: np.ndarray,
 		 period: int = 20,
 		 mult: float = 1.5,
 		 source_type="hlc3",
-		 sequential=False):
+		 sequential=False) -> ZeroLagBollingerBands:
 	"""
 	Zero Lag Bollinger Bands
+	This is BB with Zero Lag Moving Average (ZLEMA as base).
+	https://www.tradingview.com/scripts/bollingerbands/
 
 	:param candles: np.ndarray
 	:param period: int - default: 20
@@ -29,6 +31,7 @@ def zlbb(candles: np.ndarray,
 	src = get_candle_source(candles, source_type=source_type)
 	basis = cta.zlema(src, period=period, sequential=True)
 	dev = mult * talib.STDDEV(src, timeperiod=period, nbdev=1)
+
 	upper = basis + dev
 	close = candles[:, 2]
 	lower = basis - dev
