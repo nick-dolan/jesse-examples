@@ -12,7 +12,7 @@ class IndicatorsPreview(Strategy):
     # MA Streak
     @property
     def ma_streak(self):
-        return cta.ma_streak(self.candles, ma_period=5, sequential=False)
+        return cta.ma_streak(self.candles, ma_period=4, sequential=False)
 
     # Moving Average Cross (Market Color)
     @property
@@ -33,6 +33,30 @@ class IndicatorsPreview(Strategy):
     @property
     def zlbb(self):
         return cta.zlbb(self.candles, period=20, mult=1.5, sequential=False)
+
+    # Percent Change Channel
+    @property
+    def pcc(self):
+        return cta.pcc(self.candles, period=20, mult=2, sequential=False)
+
+    # Streak ROC
+    @property
+    def streak_roc(self):
+        streak = abs(int(self.ma_streak))
+        streak_back_close = self.candles[:, 2][-(streak + 1)]
+
+        return 100 * (self.close - streak_back_close) / streak_back_close
+
+    # MA Streak PCC's signal
+    # Port from: https://www.tradingview.com/script/6wwAWXA1-MA-Streak-Change-Channel/
+    @property
+    def streak_pcc_signal(self):
+        if self.streak_roc < self.pcc.lowerband:
+            return 'green'
+        elif self.streak_roc > self.pcc.upperband:
+            return 'red'
+        else:
+            return 'none'
 
     def should_long(self) -> bool:
         return False
@@ -58,3 +82,4 @@ class IndicatorsPreview(Strategy):
         print("{0}, Net Price Trend: {1}".format(date, round(self.npt, 2)))
         print("{0}, ZLKC: {1} {2} {3}".format(date, self.zlkc.upperband, self.zlkc.middleband, self.zlkc.lowerband))
         print("{0}, ZLKC: {1} {2} {3}".format(date, self.zlbb.upperband, self.zlbb.middleband, self.zlbb.lowerband))
+        print("{0}, MA Streak PCC's signal: {1}".format(date, self.streak_pcc_signal))
