@@ -26,6 +26,11 @@ Custom indicators for [Jesse](https://github.com/jesse-ai/jesse) trading framewo
 >
 > This is [Bollinger](https://www.tradingview.com/scripts/bollingerbands/) Bands (BB) with Zero Lag Moving Average (ZLEMA as base).
 
+> **Percent Change Channel**
+>
+> Percent Change Channel is like KC unless it uses percentage changes in price to set channel distance. Original presented [here](https://www.tradingview.com/script/6wwAWXA1-MA-Streak-Change-Channel/). Example of signal you can find in  [IndicatorsPreview](/strategies/IndicatorsPreview/__init__.py).
+
+
 #### FinTA (Financial Technical Analysis)
 
 See `FintaExamples` strategy to see how to connect third party technical indicators library [FinTA](https://github.com/peerchemist/finta). In FinTA, there're some indicators that are not on the official Jesse's [list](https://docs.jesse.trade/docs/indicators/reference.html).
