@@ -5,9 +5,11 @@
 
 from jesse.utils import anchor_timeframe
 
+# Supported timeframes are 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 6h, 8h, 1D
+
 # trading routes
 routes = [
-    ('Binance', 'LTC-USDT', '1h', 'IndicatorsPreview')
+    ('Binance', 'LTC-USDT', '1h', 'BadStreak')
 ]
 
 # in case your strategy requires extra candles, timeframes, ...
