@@ -30,6 +30,15 @@ Custom indicators for [Jesse](https://github.com/jesse-ai/jesse) trading framewo
 >
 > Percent Change Channel is like KC unless it uses percentage changes in price to set channel distance. Original presented [here](https://www.tradingview.com/script/6wwAWXA1-MA-Streak-Change-Channel/). Example of signal you can find in  [IndicatorsPreview](/strategies/IndicatorsPreview/__init__.py).
 
+#### Bulk import
+
+The script provides a way to bulk import the candles for all defined trading pairs. Thanks to [macd2](https://forum.jesse.trade/d/83-bulk-candle-import) user.
+
+To start, set up: exchange, start_date, and pairs inside the `bulk_import.py` file, then type:
+
+```
+python bulk_import.py
+```
 
 #### FinTA (Financial Technical Analysis)
 
