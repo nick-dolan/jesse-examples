@@ -1,128 +1,36 @@
-# Editors
-.vscode/
-.idea/
-
-# Vagrant
-.vagrant/
-
-# Mac/OSX
+/_pycache_
+/.pytest_cache
+/.vscode
+/jesse.egg-info
+/.idea
+/storage/*.key
+/storage/*.sqlite
+/storage/*.gz
 .DS_Store
-
-# Windows
-Thumbs.db
-
-# Source for the following rules: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
+/.vagrant
+/storage/temp/*.pickle
+/storage/trades/*.json
+/storage/trading-view-pine-editor/*.txt
+/storage/temp/optimize/*.pickle
+/storage/orders/*.json
+/storage/logs/trades/*.json
+/storage/logs/collect.txt
+/storage/logs/optimize.txt
+/storage/logs/live-trade.txt
+/storage/logs/paper-trade.txt
+/storage/genetics/*.txt
+/storage/csv/*.csv
+/storage/json/*.json
+/storage/charts/*.png
+/storage/full-reports/*.html
+*.pyc
+/__pycache__
+/venv
+storage/logs/collect.txt
+__pycache__
+.vscode
+/.ipynb_checkpoints
+config.py
+live-config.py
+routes.py
 .env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-storage
-strategies/Test
